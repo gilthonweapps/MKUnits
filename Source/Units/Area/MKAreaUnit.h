@@ -35,6 +35,7 @@
 + (instancetype)are;
 + (instancetype)hectare;
 + (instancetype)square_kilometer;
++ (instancetype)rood;
 
 @end
 
@@ -47,6 +48,7 @@
 + (instancetype)area_areWithAmount:(NSNumber *)amount;
 + (instancetype)area_hectareWithAmount:(NSNumber *)amount;
 + (instancetype)area_square_kilometerWithAmount:(NSNumber *)amount;
++ (instancetype)area_roodWithAmount:(NSNumber *)amount;
 
 @end
 
@@ -59,5 +61,6 @@
 - (MKQuantity *)area_are;
 - (MKQuantity *)area_hectare;
 - (MKQuantity *)area_square_kilometer;
+- (MKQuantity *)area_rood;
 
 @end
