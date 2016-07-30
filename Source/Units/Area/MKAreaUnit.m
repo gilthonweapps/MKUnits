@@ -38,8 +38,8 @@
 }
 
 + (instancetype)square_centimeter {
-    static NSString *name   = @"centimeter";
-    static NSString *symbol = @"cm";
+    static NSString *name   = @"square centimeter";
+    static NSString *symbol = @"cm2";
     id ratio = [NSDecimalNumber decimalNumberWithMantissa:1 exponent:-4 isNegative:NO];
     
     return [self createWithName:name
