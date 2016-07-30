@@ -34,6 +34,8 @@
 + (instancetype)furlong;
 + (instancetype)mile;
 + (instancetype)nautical_mile;
++ (instancetype)rod;
++ (instancetype)fathom;
 
 @end
 
@@ -46,6 +48,8 @@
 + (instancetype)length_furlongWithAmount:(NSNumber *)amount;
 + (instancetype)length_mileWithAmount:(NSNumber *)amount;
 + (instancetype)length_nautical_mileWithAmount:(NSNumber *)amount;
++ (instancetype)length_rodWithAmount:(NSNumber *)amount;
++ (instancetype)length_fathomWithAmount:(NSNumber *)amount;
 
 @end
 
@@ -58,5 +62,7 @@
 - (MKQuantity *)length_furlong;
 - (MKQuantity *)length_mile;
 - (MKQuantity *)length_nautical_mile;
+- (MKQuantity *)length_rod;
+- (MKQuantity *)length_fathom;
 
 @end
