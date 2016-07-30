@@ -77,6 +77,16 @@
                       withRatio:ratio];
 }
 
++ (instancetype)rood {
+    static NSString *name   = @"rood";
+    static NSString *symbol = @"rood";
+    id ratio = [NSDecimalNumber decimalNumberWithMantissa:10117141056 exponent:-7 isNegative:NO];
+    
+    return [self createWithName:name
+                     withSymbol:symbol
+                      withRatio:ratio];
+}
+
 @end
 
 @implementation MKQuantity (MKAreaUnit_Imperial)
@@ -101,6 +111,10 @@
     return [self createWithAmount:amount withUnit:[MKAreaUnit square_mile]];
 }
 
++ (instancetype)area_roodWithAmount:(NSNumber *)amount {
+    return [self createWithAmount:amount withUnit:[MKAreaUnit rood]];
+}
+
 @end
 
 @implementation NSNumber (MKAreaUnit_Imperial)
@@ -123,6 +137,10 @@
 
 - (MKQuantity *)area_square_mile {
     return [MKQuantity area_square_mileWithAmount:self];
+}
+
+- (MKQuantity *)area_rood {
+    return [MKQuantity area_roodWithAmount:self];
 }
 
 @end
