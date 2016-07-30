@@ -90,7 +90,27 @@
 + (instancetype)nautical_mile {
     static NSString *name   = @"nautical mile";
     static NSString *symbol = @"nmi";
-    id ratio = [NSDecimalNumber decimalNumberWithMantissa:1853184 exponent:-3 isNegative:NO];
+    id ratio = [NSDecimalNumber decimalNumberWithMantissa:1852 exponent:1 isNegative:NO];
+    
+    return [self createWithName:name
+                     withSymbol:symbol
+                      withRatio:ratio];
+}
+
++ (instancetype)rod {
+    static NSString *name   = @"rod";
+    static NSString *symbol = @"rd";
+    id ratio = [NSDecimalNumber decimalNumberWithMantissa:50292 exponent:-4 isNegative:NO];
+    
+    return [self createWithName:name
+                     withSymbol:symbol
+                      withRatio:ratio];
+}
+
++ (instancetype)fathom {
+    static NSString *name   = @"fathom";
+    static NSString *symbol = @"fath";
+    id ratio = [NSDecimalNumber decimalNumberWithMantissa:18288 exponent:-4 isNegative:NO];
     
     return [self createWithName:name
                      withSymbol:symbol
@@ -129,6 +149,14 @@
     return [self createWithAmount:amount withUnit:[MKLengthUnit nautical_mile]];
 }
 
++ (instancetype)length_rodWithAmount:(NSNumber *)amount {
+    return [self createWithAmount:amount withUnit:[MKLengthUnit rod]];
+}
+
++ (instancetype)length_fathomWithAmount:(NSNumber *)amount {
+    return [self createWithAmount:amount withUnit:[MKLengthUnit fathom]];
+}
+
 @end
 
 @implementation NSNumber (MKLengthUnit_Imperial)
@@ -159,6 +187,14 @@
 
 - (MKQuantity *)length_nautical_mile {
     return [MKQuantity length_nautical_mileWithAmount:self];
+}
+
+- (MKQuantity *)length_rod {
+    return [MKQuantity length_rodWithAmount:self];
+}
+
+- (MKQuantity *)length_fathom {
+    return [MKQuantity length_fathomWithAmount:self];
 }
 
 @end
