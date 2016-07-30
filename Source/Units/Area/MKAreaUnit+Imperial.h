@@ -32,6 +32,7 @@
 + (instancetype)square_yard;
 + (instancetype)acre;
 + (instancetype)square_mile;
++ (instancetype)rood;
 
 @end
 
@@ -42,6 +43,7 @@
 + (instancetype)area_square_yardWithAmount:(NSNumber *)amount;
 + (instancetype)area_acreWithAmount:(NSNumber *)amount;
 + (instancetype)area_square_mileWithAmount:(NSNumber *)amount;
++ (instancetype)area_roodWithAmount:(NSNumber *)amount;
 
 @end
 
@@ -52,5 +54,6 @@
 - (MKQuantity *)area_square_yard;
 - (MKQuantity *)area_acre;
 - (MKQuantity *)area_square_mile;
+- (MKQuantity *)area_rood;
 
 @end
